@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css'
+import Header from "./components/Header"
+import Article from "./components/Article"
+import Footer from "./components/Footer"
+import { Fragment } from 'react'
+import data from "./data/data"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App  () {
+    return (
+        <Fragment>
+           <Header />
+          
+              
+           <Article
+              date = {data[0].date} 
+              title = {data[0].title}  
+              image = {data[0].image} 
+              content = {data[0].content}/>
+           <Article 
+            date = {data[1].date} 
+            title = {data[1].title}  
+            image = {data[1].image} 
+            content = {data[1].content}/>
+           
+           <Footer />
+             
+        </Fragment>
+    
+    )
 }
-
-export default App;
